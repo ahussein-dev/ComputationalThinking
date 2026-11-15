@@ -1,0 +1,258 @@
+html, body, * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(246, 244, 244);
+    font-family: Arial, sans-serif;
+}
+
+article {
+    flex:3 1 60%;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    min-width: 70vh;
+}
+
+@media(min-width: 800px){
+    #main {
+        flex-direction: row;
+    }
+    nav{
+        order: 0.5;
+    }
+    article {
+        order: 2;
+    }
+
+}
+
+
+
+
+/* Navigation bar styling */
+nav {
+    background-color: #c4cdcf;
+    padding: 1em;
+    display: flex;
+    justify-content: center; 
+    gap: 1em;
+    position: sticky; /* Stick at the top of the page */
+    top: 0;
+    z-index: 1000; /* Ensure it stays above other content */
+    border-bottom: 2px solid #d0e0e1;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 20px; /* Space between items */
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 1.1em;
+    color: rgb(16, 96, 103);
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+nav ul li a:hover {
+    background-color: rgb(16, 96, 103);
+    color: white;
+}
+
+
+
+/* Header styling */
+header {
+    height: auto;
+    background: linear-gradient(90deg, rgb(224, 224, 224), rgb(199, 212, 213));
+    text-align: center;
+    padding: 20px 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+footer {
+     background-color: rgb(199, 212, 213);
+}
+
+
+a {
+    color: rgb(16, 96, 103);
+}
+
+a:hover {
+    color:white;
+}
+
+.mainheading {
+    font-family: "Courier New", monospace;
+    font-size: 2em;
+    color: rgb(25, 136, 146);
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.subheading {
+    font-family: "Courier New", monospace;
+    font-size: 1.5em;
+    color: rgb(16, 96, 103);
+    text-align: center;
+}
+
+/*Split Section*/
+.split {
+    display: grid;
+    grid-template-columns: 4fr 0fr;
+}
+
+.split aside {
+    float: right;
+    width: auto;
+}
+
+
+/*Definitions*/
+
+#definition1 {
+    min-height: 1em;
+    max-width: 70vw;
+    border-top: 0.5em;
+    border-bottom: 0.5em;
+    background:rgb(224, 224, 224);
+    margin:auto
+        }
+
+#definition2 {
+    min-height: 1em;
+    max-width: 70vw;
+    border-top: 0.5em;
+    border-bottom: 0.5em;
+    background:rgb(224, 224, 224);
+    margin:auto
+        }
+
+
+/*image layout*/
+#img1 {
+    max-width: 40vw;
+    max-height: auto;
+    display: block; /* Ensures the image behaves like a block-level element */
+    margin-left: auto; /* Automatically adjusts the left margin */
+    margin-right: auto; /* Automatically adjusts the right margin */
+}
+
+
+#img2 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 72%;
+      }
+
+.split-layout {
+    display: flex;
+    align-items: center; /* Aligns text and image vertically */
+    gap: 10px; /* Adds spacing between the text and image */
+    }
+    
+.text-content {
+    flex: 1; /* Allows the text to take up available space */
+    }
+    
+.image-content {
+    flex: 1; /* Allows the image to take up available space */
+    display: flex;
+    justify-content: center; /* Centers the image within its container */
+    }
+    
+.image-content img {
+    max-width: 100%; /* Ensures the image scales within its container */
+    height: auto; /* Maintains the aspect ratio of the image */
+    }
+    
+
+
+
+
+
+/* Footer styling */
+footer {
+    background-color: rgb(199, 212, 213);
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 0.9em;
+    color: rgb(50, 50, 50);
+    border-top: 3px solid rgb(224, 224, 224);
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer a {
+    color: rgb(16, 96, 103);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: rgb(25, 136, 146);
+}
+
+/* Main content styling */
+#main {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1000px;
+    flex: 1;
+}
+
+/* Image and content alignment */
+.split {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.split aside {
+    flex: 1;
+    min-width: 200px;
+}
+
+.split section {
+    flex: 2;
+    min-width: 300px;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+
+    .mainheading {
+        font-size: 1.5em;
+    }
+
+    .split {
+        flex-direction: column;
+    }
+}

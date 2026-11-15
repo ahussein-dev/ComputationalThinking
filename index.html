@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Computational Thinking</title>
     <link rel="stylesheet" href="stylesheet.css">
 </head>
@@ -11,7 +10,7 @@
 
     <nav aria-label="Main Navigation">
         <ul>
-            <li><a id="Computationalthinking" href="index.html">Computational Thinking</a></li>
+            <li><a id="Computationalthinking" href="index.html" aria-current="page">Computational Thinking</a></li>
             <li><a id="ComputerScientist" href="page2.html">Famous Computer Scientist</a></li>
             <li><a id="reflection" href="page3.html">Reflection</a></li>
         </ul>
@@ -28,18 +27,15 @@
                 </p>
             </section>
 
-            <br>
 
-            <blockquote id="definition1" style="text-align: center; font-weight: bold; font-style: italic;">
+            <blockquote id="definition1">
                 "Computational thinking is thought to be processes involved in formulating problems so their solutions can be represented as computational steps and algorithms."
                 <sup><a href="#reference3">[3]</a></sup>
             </blockquote>
 
-            <br>
 
             <section>
                 <h2>Key Techniques of Computational Thinking</h2>
-                <br>
                 <p>There are four key cornerstones to computational thinking:</p>
                 <ul>
                     <li><strong>Decomposition:</strong> Breaking down a complex problem into smaller parts.</li>
@@ -48,40 +44,56 @@
                     <li><strong>Algorithm Design:</strong> Creating step-by-step instructions for solutions.<sup><a href="#reference4">[4]</a></sup></li>
                 </ul>
             </section>
-            <br>
             <aside>
-                <img id="img1" src="FourMainComponentsOfCT.jpg" alt="Four key techniques of computational thinking" style="width: 100%; max-width: 600px; height: auto;" />
+                <img id="img1" src="FourMainComponentsOfCT.jpg" alt="Four key techniques of computational thinking" />
             </aside>
 
-            <br>
             
             <h2>Personal Development</h2>
-            <section class="split-layout">
-                <div class="text-content">
-                    <p>Being a mathematics graduate, I first struggled to understand how to communicate my solutions. In the exercise shown below, my initial thoughts were to use an equation for sum of integers. However after using the computational steps I was able to write a more efficient algorithm. I used decomposition to understand the different parts to the question. Abstraction helped me highlight the key steps. I used pattern recognition to find any reoccurring steps (for example a loop). And finally wrote this in an algorithm that the computer understood using algorithm design. Also through computational modelling i was able to understand variable declarations and initialization in JavaScript using the JS Machine. This made it easier to understand where the bugs in my code were coming from, and understand how digital computers work when programming.</p>
-                </div>
-                <div class="image-content">
-                    <img id="img2" src="IMG_4271.jpeg" alt="Example of computational thinking applied in coding" />
-                </div>
-            </section>
-            
+                <section class="split-layout">
+                    <div class="text-content">
+                        <p>As a mathematics graduate, my first instinct for this exercise was to use the formula for the sum of the first n integers. I set that aside to practise the computational thinking steps: decomposition to break down the question, abstraction to focus on the key steps, pattern recognition to spot the repeating step (a loop), and algorithm design to write it as code.</p>
+                        <p>Looking back, my first instinct was right: the formula is the more efficient solution. The loop does n additions, so its running time grows with n (O(n)), while the formula takes the same time however large n is (O(1)).</p>
+                    </div>
+                    <figure class="image-content">
+                        <img id="img2" src="IMG_4271.jpeg" alt="Handwritten working applying decomposition, abstraction, pattern recognition and algorithm design to the sumUp problem" />
+                        <figcaption>My original working from October 2023</figcaption>
+                    </figure>
+                </section>
 
-            <br>
+                <section>
+                    <h3>Two solutions</h3>
+                    <pre><code>// Loop: O(n)
+function sumUpLoop(n) {
+    let sum = 0;
+    for (let i = 1; i &lt;= n; i++) {
+        sum += i;
+    }
+    return sum;
+}
 
-            <section>
+// Formula: O(1)
+function sumUpFormula(n) {
+    return (n * (n + 1)) / 2;
+}
+
+console.log(sumUpLoop(7));    // 28
+console.log(sumUpFormula(7)); // 28</code></pre>
+                </section>
+
+            <section id="career">
                 <h2>Career Prospects</h2>
-                <p>Computational thinking has equipped me with problem-solving skills that will be essential my career prospects, as software engineers when create algorithms for web development, artificial intelligence, mobile app development, data science, etc. Using computational thinking I will be able to decompose problems, abstract the most important details and recognise patterns. Then before coding multiple different algorithm, I could see what algorithm will be more efficient and resourseful for the task at hand.</p>
+                <p>Computational thinking has equipped me with problem-solving skills that will be essential to my career, as software engineers create algorithms for web development, artificial intelligence, mobile app development, data science, etc. Using computational thinking I will be able to decompose problems, abstract the most important details and recognise patterns. Then before coding multiple different algorithms, I could see what algorithm will be more efficient and resourceful for the task at hand.</p>
             </section>
         </article>
     </main>
 
-    <br>
 
     <footer>
-        <p id="reference1">[1] Wing, J.M. (2006) ‘Computational Thinking,’ Communications of the ACM, 49(3), pp. 33–35.</p>
-        <p id="reference2">[2] Computational Thinking Lecture Notes, Cardiff University.</p>
-        <p id="reference3">[3] Aho, A.V. (2011). Ubiquity Symposium: Computation and Computational Thinking, pp. (1-8).</p>
-        <p id="reference4">[4] Brooks, R. (2023) What is Computational Thinking?, University of York.</p>
+        <p id="reference1">[1] Wing, J.M. (2006) ‘Computational thinking’, <cite>Communications of the ACM</cite>, 49(3), pp. 33–35.</p>
+        <p id="reference2">[2] Cardiff University (no date) <cite>Computational Thinking (CMT119) lecture notes</cite>. Unpublished.</p>
+        <p id="reference3">[3] Aho, A.V. (2011) ‘Computation and computational thinking’, <cite>Ubiquity</cite> (Ubiquity Symposium), pp. 1–8.</p>
+        <p id="reference4">[4] Brooks, R. (2023) <cite>What is computational thinking?</cite> University of York.</p>
     </footer>
 
 </body>

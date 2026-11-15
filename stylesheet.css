@@ -9,30 +9,19 @@ body {
     font-family: Arial, sans-serif;
 }
 
-article {
-    flex:3 1 60%;
-}
-
+/* Main content styling */
 #main {
     display: flex;
     flex-direction: column;
-    min-width: 70vh;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1000px;
+    flex: 1;
 }
 
-@media(min-width: 800px){
-    #main {
-        flex-direction: row;
-    }
-    nav{
-        order: 0.5;
-    }
-    article {
-        order: 2;
-    }
-
+article ul {
+    padding-left: 1.5em; /* Keeps list bullets off the edge */
 }
-
-
 
 
 /* Navigation bar styling */
@@ -69,7 +58,8 @@ nav ul li a {
     transition: all 0.3s ease; /* Smooth hover effect */
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav a[aria-current="page"] {
     background-color: rgb(16, 96, 103);
     color: white;
 }
@@ -86,17 +76,12 @@ header {
 }
 
 
-footer {
-     background-color: rgb(199, 212, 213);
-}
-
-
 a {
     color: rgb(16, 96, 103);
 }
 
 a:hover {
-    color:white;
+    color: rgb(10, 64, 69); /* Darker teal so links stay readable on hover */
 }
 
 .mainheading {
@@ -114,15 +99,21 @@ a:hover {
     text-align: center;
 }
 
-/*Split Section*/
+/* Split section: text beside the image */
 .split {
-    display: grid;
-    grid-template-columns: 4fr 0fr;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .split aside {
-    float: right;
-    width: auto;
+    flex: 1;
+    min-width: 200px;
+}
+
+.split section {
+    flex: 2;
+    min-width: 300px;
 }
 
 
@@ -131,29 +122,31 @@ a:hover {
 #definition1 {
     min-height: 1em;
     max-width: 70vw;
-    border-top: 0.5em;
-    border-bottom: 0.5em;
+    padding: 1em;
     background:rgb(224, 224, 224);
-    margin:auto
-        }
-
-#definition2 {
-    min-height: 1em;
-    max-width: 70vw;
-    border-top: 0.5em;
-    border-bottom: 0.5em;
-    background:rgb(224, 224, 224);
-    margin:auto
+    margin: 1.2em auto; /* Space above and below the quote */
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
         }
 
 
 /*image layout*/
 #img1 {
-    max-width: 40vw;
-    max-height: auto;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
     display: block; /* Ensures the image behaves like a block-level element */
-    margin-left: auto; /* Automatically adjusts the left margin */
-    margin-right: auto; /* Automatically adjusts the right margin */
+    margin: 1.2em auto; /* Space above and below, centred horizontally */
+}
+
+/* Spacing that replaces the old <br> tags */
+article section h2 {
+    margin-bottom: 0.6em;
+}
+
+#career {
+    margin-top: 1.2em;
 }
 
 
@@ -176,7 +169,14 @@ a:hover {
 .image-content {
     flex: 1; /* Allows the image to take up available space */
     display: flex;
-    justify-content: center; /* Centers the image within its container */
+    flex-direction: column; /* Stacks the caption below the image */
+    align-items: center; /* Centers the image and caption */
+    }
+
+.image-content figcaption {
+    margin-top: 8px;
+    text-align: center;
+    font-style: italic;
     }
     
 .image-content img {
@@ -209,32 +209,7 @@ footer a {
 }
 
 footer a:hover {
-    color: rgb(25, 136, 146);
-}
-
-/* Main content styling */
-#main {
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 1000px;
-    flex: 1;
-}
-
-/* Image and content alignment */
-.split {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.split aside {
-    flex: 1;
-    min-width: 200px;
-}
-
-.split section {
-    flex: 2;
-    min-width: 300px;
+    color: rgb(10, 64, 69); /* Matches the main link hover */
 }
 
 /* Responsive layout for smaller screens */
@@ -255,4 +230,20 @@ footer a:hover {
     .split {
         flex-direction: column;
     }
+
+    .split-layout {
+        flex-direction: column;
+    }
+}
+
+pre {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 1em;
+    border-radius: 6px;
+    overflow-x: auto;
+}
+
+code {
+    font-family: "Courier New", monospace;
 }
